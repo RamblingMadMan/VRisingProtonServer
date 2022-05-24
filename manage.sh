@@ -2,6 +2,8 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
+VRISING_SERVER_DIR="$HOME/Steam/steamapps/common/VRisingDedicatedServer"
+
 # Re-launch as 'gamemaster' if launched as root
 if (( $EUID == 0 )); then
 	runuser -u gamemaster -- bash "$SCRIPTPATH/manage.sh"
@@ -10,6 +12,10 @@ fi
 
 if [ ! -d "$HOME/steamcmd" ]; then
 	bash install_steamcmd.sh
+fi
+
+if [ ! -d "$VRISING_SERVER_DIR" ]; then
+	bash install_vrising_server.sh
 fi
 
 pushd "$SCRIPTPATH/Servers"
