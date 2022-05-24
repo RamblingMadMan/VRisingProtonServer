@@ -30,6 +30,7 @@ pushd "$SCRIPTPATH/Servers"
 
 export STEAM_RUNTIME=1
 export STEAM_COMPAT_DATA_PATH="$SCRIPTPATH/.proton"
+export STEAM_COMPAT_CLIENT_INSTALL_PATH="$HOME/Steam"
 export PROTON_LOG=1
 
 xvfb-run "$PROTON_DIR/proton" run \
