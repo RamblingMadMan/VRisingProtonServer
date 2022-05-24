@@ -29,7 +29,7 @@ fi
 pushd "$SCRIPTPATH/Servers"
 
 export STEAM_RUNTIME=1
-export STEAM_COMPAT_DATA_PATH="$VRISING_HOME_DIR/.proton"
+export STEAM_COMPAT_DATA_PATH="$SCRIPTPATH/.proton"
 export PROTON_LOG=1
 
 xvfb-run "$PROTON_DIR/proton" run \
