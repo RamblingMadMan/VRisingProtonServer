@@ -8,6 +8,10 @@ if (( $EUID == 0 )); then
 	exit $?
 fi
 
+if [ ! -d "$HOME/steamcmd" ]; then
+	bash install_steamcmd.sh
+fi
+
 pushd "$SCRIPTPATH/Servers"
 
 clear
@@ -115,7 +119,6 @@ while :; do
 			;;
 
 		0)
-			popd
 			exit
 			;;
 

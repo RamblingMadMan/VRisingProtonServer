@@ -7,6 +7,8 @@ This repo contains a set of utility scripts for installing VRisingServer (Steam 
 First some prerequisite packages are required:
 
 ```bash
+dpkg --add-architecture i386
+apt-get update
 apt-get install git xvfb lib32gcc-s1 libc6:amd64 libc6:i386 libgl1-mesa-glx:i386
 ```
 
@@ -20,7 +22,7 @@ Next, clone this repository into our new users home directory:
 
 ```bash
 cd /var/gamemaster
-runuser -u gamemaster -- git clone https://github.com/RamblingMadMan/VRisingProtonServer.git
+runuser -u gamemaster -- git clone --depth 1 https://github.com/RamblingMadMan/VRisingProtonServer.git
 cd VRisingProtonServer
 ```
 
