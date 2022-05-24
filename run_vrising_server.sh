@@ -34,6 +34,6 @@ export STEAM_COMPAT_CLIENT_INSTALL_PATH="$HOME/Steam"
 export PROTON_LOG=1
 
 xvfb-run "$PROTON_DIR/proton" run \
-	"$VRISING_SERVER_DIR/VRisingServer.exe" -persistentDataPath "$1" -saveName "world1"
+	"$VRISING_SERVER_DIR/VRisingServer.exe" -persistentDataPath "$1" -saveName "world1" -logFile "$1.log"
 
 popd
