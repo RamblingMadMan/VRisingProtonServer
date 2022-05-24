@@ -1,5 +1,7 @@
 # V Rising Linux Dedicated Server Setup
 
+> **WARNING** This is all highly experimental. Until Stunlock Studios releases an official linux dedicated server, this is a quick and dirty substitute with no guarantee it won't blow up.
+
 This repo contains a set of utility scripts for installing VRisingServer (Steam AppID: 1829350) on a headless Ubuntu server.
 
 ## Initial steps
