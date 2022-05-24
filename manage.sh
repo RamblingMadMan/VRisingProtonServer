@@ -18,7 +18,9 @@ if [ ! -d "$VRISING_SERVER_DIR" ]; then
 	bash install_vrising_server.sh
 fi
 
-pushd "$SCRIPTPATH/Servers"
+if [ ! -d "$SCRIPTPATH/Servers" ]; then
+	mkdir "$SCRIPTPATH/Servers"
+fi
 
 clear
 
@@ -36,6 +38,8 @@ while :; do
 
 	case $MENU_OPTION in
 		1)
+			pushd "$SCRIPTPATH/Servers"
+
 			server_dirs=($(ls -d */))
 			num_servers=${#server_dirs[@]}
 
@@ -64,6 +68,8 @@ while :; do
 					bash "$SCRIPTPATH/run_vrising_server.sh" "$server_dir"
 				fi
 			fi
+
+			popd
 
 			clear
 
@@ -105,9 +111,9 @@ while :; do
 			export VRISING_SERVER_DESC
 			export VRISING_SERVER_PASS
 
-			cp -a "$SCRIPTPATH/ServerTemplate/." "$VRISING_SERVER_FOLDER"
+			cp -a "$SCRIPTPATH/ServerTemplate/." "$SCRIPTPATH/Servers/$VRISING_SERVER_FOLDER"
 
-			envsubst < "$SCRIPTPATH/ServerTemplate/Settings/ServerHostSettings.json" > "$VRISING_SERVER_FOLDER/Settings/ServerHostSettings.json"
+			envsubst < "$SCRIPTPATH/ServerTemplate/Settings/ServerHostSettings.json" > "$SCRIPTPATH/Servers/$VRISING_SERVER_FOLDER/Settings/ServerHostSettings.json"
 
 			echo "-- [Done]"
 			sleep 1
