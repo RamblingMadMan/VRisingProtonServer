@@ -99,7 +99,7 @@ while :; do
 			read -s VRISING_SERVER_PASS
 			echo
 
-			mkdir "$VRISING_SERVER_FOLDER"
+			mkdir "$SCRIPTPATH/Servers/$VRISING_SERVER_FOLDER"
 
 			export VRISING_SERVER_NAME
 			export VRISING_SERVER_DESC
