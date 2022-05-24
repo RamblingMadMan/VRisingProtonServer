@@ -22,12 +22,14 @@ fi
 pushd "$HOME"
 
 # Install AppIDs
-# - Steam linux runtime (1070560)
+# - Steam linux runtime "heavy" (1070560)
+# - Steam linux runtime "scout" (1391110)
 # - Proton Experimental (1493710)
 # - VRisingServer (1829350)
 ./steamcmd/steamcmd.sh \
 	+login anonymous \
 	+app_update 1070560 \
+	+app_update 1391110 \
 	+app_update 1493710 \
 	+app_update 1829350 \
 	+quit
