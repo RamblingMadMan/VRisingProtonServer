@@ -12,6 +12,11 @@ if (( $# != 1 )); then
 	exit 1
 fi
 
+if [ ! -d "$SCRIPTPATH/Servers/$1" ]; then
+	&>2 echo "Server folder \"$1\" does not exist"
+	exit 1
+fi
+
 echo "Running server in folder \"$1\""
 
 PROTON_DIR="$HOME/Steam/steamapps/common/Proton - Experimental"
