@@ -105,9 +105,9 @@ while :; do
 			export VRISING_SERVER_DESC
 			export VRISING_SERVER_PASS
 
-			cp -a ../ServerTemplate/. "$VRISING_SERVER_FOLDER"
+			cp -a "$SCRIPTPATH/ServerTemplate/." "$VRISING_SERVER_FOLDER"
 
-			envsubst < ../ServerTemplate/Settings/ServerHostSettings.json > "$VRISING_SERVER_FOLDER/Settings/ServerHostSettings.json"
+			envsubst < "$SCRIPTPATH/ServerTemplate/Settings/ServerHostSettings.json" > "$VRISING_SERVER_FOLDER/Settings/ServerHostSettings.json"
 
 			echo "-- [Done]"
 			sleep 1
