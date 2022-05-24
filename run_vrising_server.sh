@@ -23,9 +23,11 @@ fi
 
 pushd "$SCRIPTPATH/Servers"
 
-STEAM_RUNTIME=1 STEAM_COMPAT_DATA_PATH="$VRISING_HOME_DIR/.proton" STEAM_COMPAT_CLIENT_INSTALL_PATH="$HOME/Steam" \
-PROTON_LOG=1 \
-	xvfb-run "$PROTON_DIR/proton" run \
+export STEAM_RUNTIME=1
+export STEAM_COMPAT_DATA_PATH="$VRISING_HOME_DIR/.proton"
+export PROTON_LOG=1
+
+xvfb-run "$PROTON_DIR/proton" run \
 	"$VRISING_SERVER_DIR/VRisingServer.exe" -persistentDataPath "$1" -saveName "world1"
 
 popd
