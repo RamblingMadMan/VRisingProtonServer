@@ -19,6 +19,7 @@ fi
 
 echo "Running server in folder \"$1\""
 
+STEAM_RUNTIME_DIR="$HOME/Steam/steamapps/common/SteamLinuxRuntime/steam-runtime"
 PROTON_DIR="$HOME/Steam/steamapps/common/Proton - Experimental"
 VRISING_SERVER_DIR="$HOME/Steam/steamapps/common/VRisingDedicatedServer"
 
@@ -28,12 +29,15 @@ fi
 
 pushd "$SCRIPTPATH/Servers"
 
-export STEAM_RUNTIME=1
+#
+# Run proton through steam runtime
+#
+
 export STEAM_COMPAT_DATA_PATH="$SCRIPTPATH/.proton"
 export STEAM_COMPAT_CLIENT_INSTALL_PATH="$HOME/Steam"
 export PROTON_LOG=1
 
-xvfb-run "$PROTON_DIR/proton" run \
+xvfb-run "$STEAM_RUNTIME_DIR/run.sh" "$PROTON_DIR/proton" run \
 	"$VRISING_SERVER_DIR/VRisingServer.exe" -persistentDataPath "$1" -saveName "world1" -logFile "$1.log"
 
 popd
