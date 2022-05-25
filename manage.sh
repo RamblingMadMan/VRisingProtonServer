@@ -36,7 +36,7 @@ while :; do
 		1)
 			pushd "$VRISING_SERVER_DIR"
 
-			server_dirs=($(ls -I linux64 -I VRisingServer_Data -d */))
+			server_dirs=($(ls -Isteamapps -IVRisingServer_Data -Ilinux64 -d */))
 			num_servers=${#server_dirs[@]}
 
 			clear
