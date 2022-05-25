@@ -11,7 +11,7 @@ fi
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 VRISING_FIX_DIR="$SCRIPTPATH/Fixes"
-VRISING_SERVER_DIR="$HOME/VRisingProtonServer/Servers"
+VRISING_SERVER_DIR="$SCRIPTPATH/Servers"
 
 # Check for steamcmd
 if [ ! -f "$HOME/steamcmd/steamcmd.sh" ]; then
