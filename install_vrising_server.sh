@@ -11,7 +11,7 @@ fi
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 VRISING_FIX_DIR="$SCRIPTPATH/Fixes"
-VRISING_SERVER_DIR="$SCRIPTPATH/Servers"
+VRISING_SERVER_DIR="$HOME/VRisingProtonServer/Servers"
 
 # Check for steamcmd
 if [ ! -f "$HOME/steamcmd/steamcmd.sh" ]; then
@@ -21,9 +21,13 @@ fi
 
 pushd "$SCRIPTPATH"
 
-# Install server into 'Servers' folder
+if [ ! -d Scripts ]; then
+	mkdir Scripts
+fi
+
+# Install server into "Servers" folder for running locally
 # - VRisingServer (1829350)
-$HOME/steamcmd/steamcmd.sh \
+./steamcmd/steamcmd.sh \
 	+force_install_dir ./Servers \
 	+login anonymous \
 	+app_update 1829350 \
