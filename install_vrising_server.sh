@@ -21,8 +21,8 @@ fi
 
 pushd "$SCRIPTPATH"
 
-if [ ! -d Scripts ]; then
-	mkdir Scripts
+if [ ! -d Servers ]; then
+	mkdir Servers
 fi
 
 # Install server into "Servers" folder for running locally
