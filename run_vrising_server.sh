@@ -36,8 +36,10 @@ pushd "$SCRIPTPATH/Servers"
 export STEAM_COMPAT_DATA_PATH="$SCRIPTPATH/.proton"
 export STEAM_COMPAT_CLIENT_INSTALL_PATH="$HOME/Steam"
 export PROTON_LOG=1
+export PROTON_USE_WINED3D11=1
+export WINE_DO_NOT_CREATE_DXGI_DEVICE_MANAGER=1
 
-xvfb-run "$STEAM_RUNTIME_DIR/run.sh" "$PROTON_DIR/proton" run \
+"$STEAM_RUNTIME_DIR/run.sh" xvfb-run "$PROTON_DIR/proton" run \
 	"$VRISING_SERVER_DIR/VRisingServer.exe" -persistentDataPath "$1" -saveName "world1" -logFile "$1.log"
 
 popd
