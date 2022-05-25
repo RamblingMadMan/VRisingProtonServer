@@ -11,7 +11,7 @@ fi
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 VRISING_FIX_DIR="$SCRIPTPATH/Fixes"
-VRISING_SERVER_DIR="$HOME/Steam/steamapps/common/VRisingDedicatedServer"
+VRISING_SERVER_DIR="$SCRIPTPATH/Servers"
 
 # Check for steamcmd
 if [ ! -f "$HOME/steamcmd/steamcmd.sh" ]; then
@@ -19,11 +19,12 @@ if [ ! -f "$HOME/steamcmd/steamcmd.sh" ]; then
 	exit 1
 fi
 
-pushd "$HOME"
+pushd "$SCRIPTPATH"
 
-# Install AppIDs
+# Install server into 'Servers' folder
 # - VRisingServer (1829350)
 ./steamcmd/steamcmd.sh \
+	+force_install_dir ./Servers \
 	+login anonymous \
 	+app_update 1829350 \
 	+quit

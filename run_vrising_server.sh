@@ -21,7 +21,7 @@ echo "Running server in folder \"$1\""
 
 STEAM_RUNTIME_DIR="$HOME/Steam/steamapps/common/SteamLinuxRuntime/steam-runtime"
 PROTON_DIR="$HOME/Steam/steamapps/common/Proton - Experimental"
-VRISING_SERVER_DIR="$HOME/Steam/steamapps/common/VRisingDedicatedServer"
+VRISING_SERVER_DIR="$SCRIPTPATH/Servers"
 
 if [ ! -d "$SCRIPTPATH/.proton" ]; then
 	mkdir "$SCRIPTPATH/.proton"
