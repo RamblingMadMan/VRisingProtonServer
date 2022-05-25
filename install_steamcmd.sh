@@ -33,20 +33,19 @@ curl -sqL "$STEAMCMD_URL" | tar zxvf -
 popd
 
 # Download AppIDs
+# - Steamworks SDK (1007)
 # - Steam linux runtime "heavy" (1070560)
 # - Proton Experimental (1493710)
 pushd "$HOME"
 ./steamcmd/steamcmd.sh \
 	+login anonymous \
+	+app_update 1007 \
 	+app_update 1070560 \
 	+app_update 1493710 \
 	+quit
 popd
 
-# make directory for scout runtime in heavy
-mkdir -p "$HOME/Steam/steamapp/common/SteamLinuxRuntime/steam-runtime"
-
 # download and extract steam-runtime.tar.xz
-pushd "$HOME/Steam/steamapp/common/SteamLinuxRuntime/steam-runtime"
-curl -sqL "$STEAM_RUNTIME_URL" | tar zxvf -
+pushd "$HOME/Steam/steamapps/common/SteamLinuxRuntime"
+curl -sqL "$STEAM_RUNTIME_URL" | tar xvfJ -
 popd
