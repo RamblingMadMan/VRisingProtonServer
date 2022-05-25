@@ -14,5 +14,12 @@
   "AutoSaveInterval": 300,
   "GameSettingsPreset": "",
   "AdminOnlyDebugEvents": true,
-  "DisableDebugEvents": false
+  "DisableDebugEvents": false,
+  "API": {
+    "Enabled": true,
+    "BindAddress": "*",
+    "BindPort": 9090,
+    "BasePath": "/",
+    "AccessList": ""
+  }
 }

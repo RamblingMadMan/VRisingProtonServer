@@ -49,7 +49,8 @@ while :; do
 				>&2 echo "No servers found"
 				sleep 1
 			else
-				echo "[Available servers]"
+				echo "[Servers]"
+				echo "0) Back"
 				for (( i=0; i<${num_servers}; i++ ));
 				do
 					echo "$(($i+1))) ${server_dirs[$i]}"
@@ -63,7 +64,7 @@ while :; do
 				if (( ${SERVER_CHOICE} > ${num_servers} )); then
 					>&2 echo "Invalid choice $SERVER_CHOICE"
 					sleep 1
-				else
+				elif (( $SERVER_CHOICE != 0 )); then
 					server_dir=${server_dirs[$(($SERVER_CHOICE - 1))]}
 					bash "$SCRIPTPATH/run_vrising_server.sh" "$server_dir"
 				fi
