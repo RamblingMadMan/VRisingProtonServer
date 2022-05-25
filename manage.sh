@@ -66,7 +66,7 @@ while :; do
 					sleep 1
 				elif (( $SERVER_CHOICE != 0 )); then
 					server_dir=${server_dirs[$(($SERVER_CHOICE - 1))]}
-					bash "$SCRIPTPATH/run_vrising_server.sh" "$server_dir"
+					bash "$SCRIPTPATH/run_vrising_server.sh" "${server_dir%/}"
 				fi
 			fi
 
