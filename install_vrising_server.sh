@@ -27,7 +27,7 @@ fi
 
 # Install server into "Servers" folder for running locally
 # - VRisingServer (1829350)
-./steamcmd/steamcmd.sh \
+$HOME/steamcmd/steamcmd.sh \
 	+force_install_dir ./Servers \
 	+login anonymous \
 	+app_update 1829350 \
