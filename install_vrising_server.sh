@@ -25,9 +25,10 @@ if [ ! -d Servers ]; then
 	mkdir Servers
 fi
 
-# Install server into "Servers" folder for running locally
+# Install windows version of server into "Servers" folder for running locally
 # - VRisingServer (1829350)
 $HOME/steamcmd/steamcmd.sh \
+	+@sSteamCmdForcePlatformType windows \
 	+force_install_dir ./Servers \
 	+login anonymous \
 	+app_update 1829350 \
