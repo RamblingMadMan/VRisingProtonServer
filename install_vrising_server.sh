@@ -29,7 +29,7 @@ fi
 # - VRisingServer (1829350)
 $HOME/steamcmd/steamcmd.sh \
 	+@sSteamCmdForcePlatformType windows \
-	+force_install_dir ./Servers \
+	+force_install_dir "$VRISING_SERVER_DIR" \
 	+login anonymous \
 	+app_update 1829350 \
 	+quit
