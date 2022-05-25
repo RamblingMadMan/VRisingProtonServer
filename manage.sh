@@ -53,7 +53,7 @@ while :; do
 				echo "0) Back"
 				for (( i=0; i<${num_servers}; i++ ));
 				do
-					echo "$(($i+1))) ${server_dirs[$i]}"
+					echo "$(($i+1))) ${server_dirs[$i]%/}"
 				done
 				echo ""
 
