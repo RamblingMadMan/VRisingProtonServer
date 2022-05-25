@@ -2,7 +2,7 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-VRISING_SERVER_DIR="$HOME/Steam/steamapps/common/VRisingDedicatedServer"
+VRISING_SERVER_DIR="$SCRIPTPATH/Servers"
 
 # Re-launch as 'gamemaster' if launched as root
 if (( $EUID == 0 )); then
@@ -16,10 +16,6 @@ fi
 
 if [ ! -d "$VRISING_SERVER_DIR" ]; then
 	bash install_vrising_server.sh
-fi
-
-if [ ! -d "$SCRIPTPATH/Servers" ]; then
-	mkdir "$SCRIPTPATH/Servers"
 fi
 
 clear
@@ -38,9 +34,9 @@ while :; do
 
 	case $MENU_OPTION in
 		1)
-			pushd "$SCRIPTPATH/Servers"
+			pushd "$VRISING_SERVER_DIR"
 
-			server_dirs=($(ls -d */))
+			server_dirs=($(ls -I linux64 -I VRisingServer_Data -d */))
 			num_servers=${#server_dirs[@]}
 
 			clear
