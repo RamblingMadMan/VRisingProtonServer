@@ -36,4 +36,5 @@ $HOME/steamcmd/steamcmd.sh \
 
 popd
 
+cp -r "$SCRIPTPATH/Steamworks/linux64" "$SCRIPTPATH/Steamworks/steamclient.so" "$VRISING_SERVER_DIR"
 cp "$VRISING_FIX_DIR/stun_steamnetworking.dll" "$VRISING_SERVER_DIR/VRisingServer_Data/Plugins/x86_64"

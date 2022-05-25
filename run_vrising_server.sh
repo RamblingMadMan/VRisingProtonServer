@@ -19,8 +19,8 @@ fi
 
 echo "Running server in folder \"$1\""
 
-STEAM_RUNTIME_DIR="$HOME/Steam/steamapps/common/SteamLinuxRuntime/steam-runtime"
-PROTON_DIR="$HOME/Steam/steamapps/common/Proton - Experimental"
+STEAM_RUNTIME_DIR="$SCRIPTPATH/steam-runtime"
+PROTON_DIR="$SCRIPTPATH/Proton"
 VRISING_SERVER_DIR="$SCRIPTPATH/Servers"
 
 if [ ! -d "$SCRIPTPATH/.proton" ]; then
@@ -30,7 +30,7 @@ fi
 pushd "$SCRIPTPATH/Servers"
 
 #
-# Run proton through steam runtime
+# Run server through proton through xvfb through steam runtime
 #
 
 export STEAM_COMPAT_DATA_PATH="$SCRIPTPATH/.proton"

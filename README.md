@@ -13,7 +13,7 @@ First some prerequisite packages are required:
 ```bash
 dpkg --add-architecture i386
 apt-get update
-apt-get install git xvfb lib32gcc-s1 libc6:amd64 libc6:i386 libgl1-mesa-glx:i386
+apt-get install git fontconfig xvfb lib32gcc-s1 libc6:amd64 libc6:i386 libgl1-mesa-glx:i386
 ```
 
 ### Firewall rules

@@ -32,18 +32,23 @@ pushd "$HOME/steamcmd"
 curl -sqL "$STEAMCMD_URL" | tar zxvf -
 popd
 
-# Download AppIDs
-# - Steam linux runtime "heavy" (1070560)
+# Install Proton and the steamworks sdk
 # - Proton Experimental (1493710)
-pushd "$HOME"
-./steamcmd/steamcmd.sh \
+pushd "$SCRIPTPATH"
+$HOME/steamcmd/steamcmd.sh \
+	+force_install_dir $SCRIPTPATH/Steamworks \
 	+login anonymous \
-	+app_update 1070560 \
+	+app_update 1007 \
+	+quit
+
+$HOME/steamcmd/steamcmd.sh \
+	+force_install_dir $SCRIPTPATH/Proton \
+	+login anonymous \
 	+app_update 1493710 \
 	+quit
 popd
 
 # download and extract steam-runtime.tar.xz
-pushd "$HOME/Steam/steamapps/common/SteamLinuxRuntime"
+pushd "$SCRIPTPATH"
 curl -sqL "$STEAM_RUNTIME_URL" | tar xvfJ -
 popd

@@ -1,0 +1,6 @@
+# run artifacts
+.proton
+steam-runtime/
+Proton/
+Steamworks/
+Servers/
